@@ -49,7 +49,7 @@ public class TeacherController extends HttpServlet {
 		try {
 			switch(action) {
 			case "new" :
-//				System.out.print(action);
+
 				showNewForm(request, response);
 			case "insert":
                 insertTeacher(request, response);
@@ -64,7 +64,7 @@ public class TeacherController extends HttpServlet {
                 updateTeacher(request, response);
                 break;
             default:
-//            	System.out.print(action);
+
                 listTeacher(request, response);
                 break;
 			}
@@ -85,9 +85,7 @@ public class TeacherController extends HttpServlet {
 	
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response)
 		    throws ServletException, IOException {
-//				List<Classe> listClasse = classeDao.getAllClasse();
-//				request.setAttribute("listClasse", listClasse);
-//				System.out.println("gogo " +listClasse);
+
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("addTeacher.jsp");
 		        dispatcher.forward(request, response);
 		    }
@@ -96,10 +94,10 @@ public class TeacherController extends HttpServlet {
 		    throws SQLException, ServletException, IOException {
 		        int id = Integer.parseInt(request.getParameter("id"));
 		        Teacher existingTeacher =  teacherDao.getTeacher(id);
-//		        List<Classe> listClasse = classeDao.getAllClasse();
+
 		        
 		        request.setAttribute("teacher", existingTeacher);
-//		        request.setAttribute("listClasse", listClasse);
+
 		        
 		        RequestDispatcher dispatcher = request.getRequestDispatcher("addTeacher.jsp");
 		        dispatcher.forward(request, response);
@@ -109,16 +107,16 @@ public class TeacherController extends HttpServlet {
 	private void insertTeacher(HttpServletRequest request, HttpServletResponse response)
 		    throws SQLException, IOException, ServletException {
 		
-//		int classe_id = Integer.parseInt(request.getParameter("classe_id"));
+
 		String teacherName = request.getParameter("teacherName");
 		
-//		Classe classe = classeDao.getClasse(classe_id);
+
 		
 		Teacher teacher = new Teacher();
 		teacher.setTeacherName(teacherName);
 		
 		
-//		teacherDao.saveTeacher(teacher);
+
 		      
 		response.sendRedirect("TeacherController?action=list");
 		teacherDao.saveTeacher(teacher);
@@ -128,14 +126,14 @@ public class TeacherController extends HttpServlet {
 	private void updateTeacher(HttpServletRequest request, HttpServletResponse response)
 		    throws SQLException, IOException {
 		        int id = Integer.parseInt(request.getParameter("id"));
-//		        int classe_id = Integer.parseInt(request.getParameter("classe_id"));
+
 		        String teacherName = request.getParameter("teacherName");
 		        
 		        Teacher teacher = teacherDao.getTeacher(id);
-//		        Classe classe = classeDao.getClasse(classe_id);
+
 		        
 		        teacher.setTeacherName(teacherName);
-//		        student.setClasse(classe);
+
 				
 				
 		        teacherDao.updateTeacher(teacher);

@@ -2,27 +2,23 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>leaner Academy</title>
+<title>Login Page</title>
 </head>
 <body>
-	<h1> Welcome to learner academy</h1>
-	
-	<h3>
-		<a href="ClasseController?action=list">Classes</a>
-	</h3>
-	
-	<h3>
-		<a href="StudentController?action=list">Students</a>
-	</h3>
-	
-	<h3>
-		<a href="SubjectController?action=list">Subjects</a>
-	</h3>
-	
-	<h3>
-		<a href="TeacherController?action=list">Teachers</a>
-	</h3>
-	
-	
+	<div align="center">
+		<h1>Login Page</h1>
+	</div>
+
+	<div align="center">
+		<form action="MainController">
+			<label for="username">Username</label><br> 
+			<input type="text" id="username" name="username"><br> 
+			<label for="password">Password</label><br>
+			<input type="password" id="password" name="password"><br>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+</body>
 </body>
 </html>

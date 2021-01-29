@@ -19,7 +19,7 @@
          <a href="ClasseController?action=list">List All Classe</a>
          
         </h2>
-        <h3><a href="index.html">Home Page</a></h3>
+        <h3><a href="home.html">Home Page</a></h3>
 	</div>
 	<div align="center">
         

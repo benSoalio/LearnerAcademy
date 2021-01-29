@@ -59,7 +59,7 @@ public class ClasseController extends HttpServlet {
 		try {
 			switch(action) {
 			case "new" :
-//				System.out.print(action);
+
 				showNewForm(request, response);
 			case "insert":
                 insertClasse(request, response);
@@ -74,7 +74,7 @@ public class ClasseController extends HttpServlet {
                 updateClasse(request, response);
                 break;
             default:
-//            	System.out.print(action);
+
                 listClasse(request, response);
                 break;
 			}
